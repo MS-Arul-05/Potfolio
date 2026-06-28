@@ -1,7 +1,8 @@
+import type { Portfolio } from "@/lib/content";
+
 // Builds the system prompt for the chat bot from the portfolio data.
 // The bot only speaks about Arul, grounded in this data — no hallucinated facts.
-
-export function buildSystemPrompt(p) {
+export function buildSystemPrompt(p: Portfolio): string {
   const skills = p.skills
     .map((s) => `${s.group}: ${s.items.join(", ")}`)
     .join("\n");

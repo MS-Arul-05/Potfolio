@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Section from "./Section";
-import { portfolio, API_URL } from "@/lib/content";
+import { portfolio } from "@/lib/content";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -16,7 +16,7 @@ export default function Contact() {
     const data = Object.fromEntries(new FormData(form));
     setStatus("sending");
     try {
-      const res = await fetch(`${API_URL}/api/contact`, {
+      const res = await fetch(`/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

@@ -9,7 +9,7 @@ export default function Footer() {
         <p>
           © {year} {person.name}. All rights reserved.
         </p>
-        <p>Built with Next.js · AI by Claude</p>
+        <p>Built with Next.js · AI by OpenAI</p>
       </div>
     </footer>
   );

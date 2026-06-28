@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { portfolio, API_URL } from "@/lib/content";
+import { portfolio } from "@/lib/content";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -30,7 +30,7 @@ export default function ChatWidget() {
     setBusy(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch(`/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: history }),

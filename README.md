@@ -1,67 +1,80 @@
-# AI Portfolio — Arul M
+# AI Portfolio — Arul MS
 
-An immersive, AI-powered personal portfolio. An AI robot guide ("ARIA") welcomes
+An immersive, AI-powered personal portfolio. An AI guide ("ARIA") welcomes
 visitors, narrates Arul's journey, and answers questions in a streaming chat —
-powered by Claude.
+powered by OpenAI. **Single Next.js app — deploys to Vercel in one click.**
 
 ## Architecture
 
 ```
-Browser (Next.js)  ──►  Backend (Express)  ──►  Claude API
-       │                       │
-       │                       └──►  MongoDB (contact + optional transcripts)
-       └── static, SEO-friendly, clean/minimal light design
+Browser ──► Next.js app (Vercel)
+              ├─ UI (static, SEO-friendly, clean/minimal light)
+              └─ API routes (serverless)
+                   ├─ /api/chat     → streams OpenAI chat (SSE)
+                   └─ /api/contact  → saves to MongoDB (optional)
 ```
 
-- **frontend/** — Next.js (App Router) + Tailwind. Clean, minimal, responsive, SEO-ready.
-- **backend/** — Express service. Streams Claude chat (SSE), stores contact submissions in MongoDB.
-- **frontend/data/portfolio.json** — the single source of truth. Edit this one file
-  to fill in all of Arul's real content; both the UI and the bot read from it.
+Everything lives in one Next.js project (`frontend/`). The chat and contact
+endpoints are App Router route handlers, so there is **no separate backend
+server** — it all runs as Vercel serverless functions.
 
-## Sections (epics)
+## Project structure
+
+```
+frontend/
+  app/
+    page.tsx            # the portfolio (all sections)
+    api/chat/route.ts   # streaming OpenAI chat
+    api/contact/route.ts# contact form → MongoDB
+  components/           # UI sections + chat widget
+  lib/
+    content.ts          # loads portfolio.json (typed)
+    persona.ts          # builds the bot's system prompt
+    db.ts               # MongoDB helper
+  data/portfolio.json   # SINGLE SOURCE OF TRUTH — edit this for all content
+  public/               # images + resume PDF
+```
+
+## Sections
 
 Landing · AI Avatar · Voice intro · About · Skills · Projects · Research ·
-Services · Experience · Resume · Contact · AI Chat.
+Services · Experience · Education & Certifications · Resume · Contact · AI Chat.
 
-## Quick start
-
-### 1. Backend
-
-```bash
-cd backend
-npm install
-cp .env.example .env       # add your ANTHROPIC_API_KEY (and MONGODB_URI if you have one)
-npm run dev                # http://localhost:4000
-```
-
-### 2. Frontend
+## Run locally
 
 ```bash
 cd frontend
 npm install
-cp .env.local.example .env.local   # NEXT_PUBLIC_API_URL=http://localhost:4000
+cp .env.local.example .env.local   # add OPENAI_API_KEY
 npm run dev                        # http://localhost:3000
 ```
 
-## Adding your data
+## Editing content
 
-1. Edit **frontend/data/portfolio.json** — replace every `TODO` value.
-2. Drop assets in **frontend/public/images/** (avatar, photo, project images)
-   and your resume PDF in **frontend/public/files/**.
-3. That's it — the homepage and the AI bot both update automatically.
+1. Edit **frontend/data/portfolio.json** — replace every value.
+2. Drop assets in **frontend/public/images/** and your resume PDF in
+   **frontend/public/files/**.
+3. The homepage and the AI bot both update automatically.
 
-## Configuration
+## Environment variables
 
-| Where | Key | Purpose |
-|-------|-----|---------|
-| backend/.env | `ANTHROPIC_API_KEY` | Claude API key (required) |
-| backend/.env | `CHAT_MODEL` | Defaults to `claude-opus-4-8`; set `claude-haiku-4-5` for cheaper/faster |
-| backend/.env | `MONGODB_URI` | Optional; without it, contact messages are logged, not stored |
-| backend/.env | `CORS_ORIGINS` | Allowed frontend origins |
-| frontend/.env.local | `NEXT_PUBLIC_API_URL` | URL of the backend service |
+Set these in `frontend/.env.local` locally, and in the Vercel project settings
+for production:
 
-## Deploy
+| Key | Required | Purpose |
+|-----|----------|---------|
+| `OPENAI_API_KEY` | ✅ | OpenAI API key (powers the chat) |
+| `CHAT_MODEL` | — | Defaults to `gpt-5.4-mini` |
+| `MONGODB_URI` | — | Optional; without it, contact messages are logged, not stored |
+| `MONGODB_DB` | — | Database name (default `ms_portfolio`) |
 
-- **Frontend** → Vercel (or any Node host). Set `NEXT_PUBLIC_API_URL` to the deployed backend.
-- **Backend** → Render / Railway / Fly / a VM. Set env vars; expose the port.
-- Point `CORS_ORIGINS` at the deployed frontend origin.
+## Deploy to Vercel
+
+1. Push to GitHub (already done).
+2. On Vercel → **New Project** → import the repo.
+3. Set **Root Directory** to `frontend`.
+4. Add the env vars above (at minimum `OPENAI_API_KEY`).
+5. Deploy. That's it — UI and API ship together.
+
+> The `/api/chat` route streams responses; it runs on the Node serverless
+> runtime with `maxDuration = 30s`, which is plenty for short chat replies.

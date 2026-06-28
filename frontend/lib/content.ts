@@ -55,6 +55,3 @@ export type Portfolio = {
 };
 
 export const portfolio = data as unknown as Portfolio;
-
-export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
