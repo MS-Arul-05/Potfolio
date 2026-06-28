@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Base font size bumped from the 16px default → scales all text site-wide. */
+  font-size: 18px;
+}
+
+body {
+  @apply bg-parchment text-ink antialiased;
+}
+
+/* Reusable building blocks */
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-5xl px-6;
+  }
+  .section {
+    @apply container-x py-20 md:py-28;
+  }
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-widest text-accent;
+  }
+  .h2 {
+    @apply mt-2 text-3xl font-bold tracking-tight md:text-4xl;
+  }
+  .lead {
+    @apply mt-4 max-w-2xl text-lg text-muted;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white p-6 transition hover:shadow-md;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-parchment hover:bg-accentHover;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-ink hover:border-accent hover:text-accent;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full bg-accentSoft px-3 py-1 text-sm font-medium text-accent;
+  }
+}

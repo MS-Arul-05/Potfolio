@@ -1,0 +1,142 @@
+{
+  "_README": "SINGLE SOURCE OF TRUTH. Populated from Arul MS's CV. The frontend renders from it and the backend bot answers questions from it.",
+
+  "person": {
+    "name": "Arul MS",
+    "title": "AI/ML Engineer & Full-Stack Developer",
+    "tagline": "I build end-to-end AI solutions — from ML models and REST APIs to AI-powered automation workflows.",
+    "bio": "Final-year AI & ML Engineering student with hands-on internship experience in AI automation and data analytics. Published researcher with 4 papers and a Best Paper Award, specialising in deep learning for cybersecurity. I build end-to-end solutions — from ML models and REST APIs to AI-powered automation workflows — and I'm actively seeking a full-time role in AI/ML, full-stack development, or automation engineering.",
+    "location": "Chennai, India",
+    "languages": ["English", "Tamil"],
+    "avatarImage": "/images/avatar.png",
+    "photo": "/images/arul.jpg",
+    "resumeFile": "/files/arul-resume.pdf"
+  },
+
+  "bot": {
+    "name": "ARIA",
+    "greeting": "Hi! I'm ARIA, Arul's AI guide. Ask me about his AI/ML work, research papers, projects, or experience.",
+    "tone": "friendly and professional"
+  },
+
+  "social": {
+    "email": "msarul2005@gmail.com",
+    "phone": "+91 8838577150",
+    "linkedin": "https://linkedin.com/in/msarul",
+    "github": "https://github.com/MS-Arul-19",
+    "x": "",
+    "website": ""
+  },
+
+  "skills": [
+    { "group": "Languages", "items": ["Python", "JavaScript", "Java", "C", "Node.js"] },
+    { "group": "Frontend", "items": ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Figma"] },
+    { "group": "Backend", "items": ["Node.js", "Express.js", "FastAPI", "REST APIs"] },
+    { "group": "AI / ML", "items": ["TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy", "LangChain"] },
+    { "group": "Automation", "items": ["n8n", "Make", "Zapier", "AI Agent Development", "Prompt Engineering"] },
+    { "group": "Cloud & Tools", "items": ["AWS", "Docker", "Git", "GitHub", "MySQL", "MongoDB"] }
+  ],
+
+  "projects": [
+    {
+      "name": "Hybrid Deep Learning Anomaly Detection System",
+      "summary": "A hybrid CNN-LSTM model achieving 98% detection accuracy for identifying network anomalies and suspicious activities. Awarded Best Paper.",
+      "tech": ["Python", "TensorFlow", "Keras", "CNN-LSTM"],
+      "link": "",
+      "repo": "",
+      "image": "/images/project-1.jpg"
+    },
+    {
+      "name": "AI-Based Fake ID & Image Forgery Detection",
+      "summary": "A deep learning pipeline using image forensics and classification models to detect forged identity documents and manipulated images.",
+      "tech": ["Python", "Deep Learning", "Image Forensics", "Scikit-learn"],
+      "link": "",
+      "repo": "",
+      "image": "/images/project-2.jpg"
+    },
+    {
+      "name": "AI Automation Workflows",
+      "summary": "End-to-end AI automation workflows built with n8n and Make, integrating LLM APIs with custom business logic to improve operational efficiency.",
+      "tech": ["n8n", "Make", "LLM APIs", "Prompt Engineering"],
+      "link": "",
+      "repo": "",
+      "image": "/images/project-3.jpg"
+    }
+  ],
+
+  "research": [
+    {
+      "title": "Hybrid Deep Learning Anomaly Detection System",
+      "venue": "Best Paper Award",
+      "year": "Mar 2025",
+      "link": "",
+      "summary": "Developed a hybrid CNN-LSTM model achieving 98% detection accuracy for identifying network anomalies and suspicious activities."
+    },
+    {
+      "title": "AI-Based Fake ID & Image Forgery Detection",
+      "venue": "Research Publication",
+      "year": "Jun 2025",
+      "link": "",
+      "summary": "Built a deep learning pipeline using image forensics and classification models to detect forged identity documents and manipulated images."
+    },
+    {
+      "title": "Securing the Cloud: Deep Learning + ORCA Optimization",
+      "venue": "Research Publication",
+      "year": "Sep 2025",
+      "link": "",
+      "summary": "Proposed an intelligent cloud security framework combining DL-based threat classification with ORCA metaheuristic optimisation for adaptive threat detection."
+    },
+    {
+      "title": "Multi-Model Deep Learning for Advanced Cybersecurity Threat Detection",
+      "venue": "Research Publication",
+      "year": "Apr 2026",
+      "link": "",
+      "summary": "Designed a CNN / RNN / Transformer ensemble to detect and classify advanced cyber threats with improved accuracy across real-time network traffic data."
+    }
+  ],
+
+  "services": [
+    { "name": "AI/ML Model Development", "description": "Designing and training deep learning models for classification, detection, and prediction — from data to deployed REST API." },
+    { "name": "AI Automation Workflows", "description": "Building LLM-powered automation with n8n, Make, and Zapier to streamline business operations." },
+    { "name": "Full-Stack Web Development", "description": "End-to-end web apps with React, Node.js/Express, and FastAPI backends." }
+  ],
+
+  "experience": [
+    {
+      "company": "ShotZoo",
+      "role": "AI & Automation Intern",
+      "start": "Apr 2026",
+      "end": "Present",
+      "highlights": [
+        "Built end-to-end AI automation workflows using n8n and Make, integrating LLM APIs with custom business logic.",
+        "Collaborated with cross-functional teams to design and deploy automation systems that improved operational efficiency."
+      ]
+    },
+    {
+      "company": "Mandalo Tech",
+      "role": "Data Analyst Intern",
+      "start": "Jul 2025",
+      "end": "Aug 2025",
+      "highlights": [
+        "Cleaned and visualised datasets using Python (Pandas, Matplotlib).",
+        "Built KPI dashboards to support data-driven decisions."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "B.E. Computer Science — Artificial Intelligence & Machine Learning",
+      "school": "Sriram Engineering College",
+      "period": "Expected 2027",
+      "detail": "CGPA: 8.33 / 10.0"
+    }
+  ],
+
+  "certifications": [
+    { "name": "Ethical Hacking (NPTEL)", "issuer": "IIT Kharagpur", "year": "2024" },
+    { "name": "Cloud Computing (NPTEL)", "issuer": "IIT Kharagpur", "year": "2025" },
+    { "name": "Google AI Essentials", "issuer": "Coursera", "year": "2025" },
+    { "name": "Microsoft Data Analysis", "issuer": "LinkedIn Learning", "year": "2025" }
+  ]
+}
