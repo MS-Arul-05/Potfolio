@@ -33,7 +33,7 @@
     { "group": "Frontend", "items": ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Figma"] },
     { "group": "Backend", "items": ["Node.js", "Express.js", "FastAPI", "REST APIs"] },
     { "group": "AI / ML", "items": ["TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy", "LangChain"] },
-    { "group": "Automation", "items": ["n8n", "Make", "Zapier", "AI Agent Development", "Prompt Engineering"] },
+    { "group": "Automation", "items": ["n8n", "Make", "Zapier"] },
     { "group": "Cloud & Tools", "items": ["AWS", "Docker", "Git", "GitHub", "MySQL", "MongoDB"] }
   ],
 
