@@ -2,7 +2,7 @@
 
 import Section from "./Section";
 import { portfolio } from "@/lib/content";
-import LogoLoop from "./LogoLoop";
+import BorderGlow from "./BorderGlow";
 
 // Maps a skill name to its Devicon icon path (served from jsDelivr).
 // Anything not listed here renders as a text-only chip.
@@ -39,13 +39,6 @@ const iconUrl = (slug: string) =>
     ? slug
     : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}.svg`;
 
-// Logos for the scrolling marquee under the Skills grid.
-const loopLogos = Object.entries(ICONS).map(([title, slug]) => ({
-  src: iconUrl(slug),
-  alt: title,
-  title,
-}));
-
 export default function Skills() {
   return (
     <Section
@@ -56,47 +49,44 @@ export default function Skills() {
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {portfolio.skills.map((g) => (
-          <div key={g.group} className="card">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
-              {g.group}
-            </h3>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {g.items.map((item) => (
-                <li key={item} className="chip inline-flex items-center gap-1.5">
-                  {ICONS[item] && (
-                    <img
-                      src={iconUrl(ICONS[item])}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                      className="h-4 w-4 shrink-0"
-                      onError={(e) => {
-                        // Hide gracefully if a logo isn't available.
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  )}
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <BorderGlow
+            key={g.group}
+            className="h-full"
+            glowColor="200 100 64"
+            glowIntensity={1.3}
+            backgroundColor="#121212"
+            borderRadius={16}
+            glowRadius={32}
+            edgeSensitivity={25}
+            colors={["#38bdf8", "#2f8bff", "#7dd3fc"]}
+          >
+            <div className="p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
+                {g.group}
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {g.items.map((item) => (
+                  <li key={item} className="chip inline-flex items-center gap-1.5">
+                    {ICONS[item] && (
+                      <img
+                        src={iconUrl(ICONS[item])}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="h-4 w-4 shrink-0"
+                        onError={(e) => {
+                          // Hide gracefully if a logo isn't available.
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    )}
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </BorderGlow>
         ))}
-      </div>
-
-      <div className="relative mt-12 h-[72px] overflow-hidden">
-        <LogoLoop
-          logos={loopLogos}
-          speed={80}
-          direction="left"
-          logoHeight={40}
-          gap={56}
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          fadeOutColor="#f2e9e4"
-          ariaLabel="Technologies I work with"
-        />
       </div>
     </Section>
   );

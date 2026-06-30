@@ -8,19 +8,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Source palette
-        spaceIndigo: "#22223b",
-        dustyGrape: "#4a4e69",
-        lilacAsh: "#9a8c98",
-        almondSilk: "#c9ada7",
-        parchment: "#f2e9e4",
+        // Source palette — cinematic monochrome (Afterglow-inspired)
+        obsidian: "#0a0a0a",
+        coal: "#121212",
+        graphite: "#1c1c1c",
+        ash: "#8b8b90",
+        chalk: "#fafafa",
         // Semantic tokens (used across components)
-        ink: "#22223b", // Space Indigo — primary text, headings, buttons, links
-        muted: "#4a4e69", // Dusty Grape — secondary text
-        line: "#e4d9d2", // warm border on parchment
-        accent: "#22223b", // Space Indigo — brand / interactive
-        accentHover: "#4a4e69", // Dusty Grape — hover state
-        accentSoft: "#ece6ee", // soft lilac tint — chip backgrounds, hero wash
+        parchment: "#0a0a0a", // page background — near-black
+        ink: "#f5f5f5", // primary text, headings
+        muted: "#8b8b90", // secondary text
+        line: "#262626", // subtle dark border
+        accent: "#fafafa", // brand / interactive — chalk white
+        accentHover: "#c4c4c4", // hover state — dimmed white
+        accentSoft: "#161616", // elevated surface tint — chip bg, hero wash
+        surface: "#121212", // cards, panels
+        surfaceHover: "#1c1c1c", // card hover
+        brand: "#2f8bff", // bright electric blue — buttons / primary actions
+        brandHover: "#1b78f0", // deeper electric blue — button hover
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],

@@ -90,7 +90,7 @@ export default function ChatWidget() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-2xl text-white shadow-lg transition hover:bg-accentHover"
+        className="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-brand text-2xl text-white shadow-lg transition hover:bg-brandHover"
         aria-label="Chat with the AI guide"
       >
         {open ? "✕" : "💬"}
@@ -98,13 +98,13 @@ export default function ChatWidget() {
 
       {/* Panel */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 flex h-[30rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-2xl">
+        <div className="fixed bottom-24 right-6 z-50 flex h-[30rem] w-[22rem] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-2xl">
           <div className="flex items-center gap-2 border-b border-line bg-accentSoft px-4 py-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={portfolio.person.avatarImage}
               alt={bot.name}
-              className="h-9 w-9 rounded-full object-cover object-top ring-1 ring-white"
+              className="h-9 w-9 rounded-full object-cover object-top ring-1 ring-line"
             />
             <div>
               <p className="text-sm font-semibold">{bot.name}</p>
@@ -118,8 +118,8 @@ export default function ChatWidget() {
                 key={i}
                 className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm ${
                   m.role === "user"
-                    ? "ml-auto bg-accent text-white"
-                    : "bg-gray-100 text-ink"
+                    ? "ml-auto bg-brand text-white"
+                    : "bg-graphite text-ink"
                 }`}
               >
                 {m.content || <span className="opacity-50">…</span>}
@@ -143,7 +143,7 @@ export default function ChatWidget() {
             <button
               type="submit"
               disabled={busy}
-              className="grid h-9 w-9 place-items-center rounded-full bg-accent text-white disabled:opacity-50"
+              className="grid h-9 w-9 place-items-center rounded-full bg-brand text-white disabled:opacity-50"
               aria-label="Send"
             >
               ↑

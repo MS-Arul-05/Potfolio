@@ -74,23 +74,23 @@
     },
     {
       "title": "AI-Based Fake ID & Image Forgery Detection",
-      "venue": "Research Publication",
-      "year": "Jun 2025",
-      "link": "",
+      "venue": "ICNKAI 2K25 — Intl. Conference on Nexus of Knowledge using AI & IoT",
+      "year": "2025",
+      "link": "https://secp.prabodhanamfoundation.org/csn/index.php/csn-secp/article/view/79",
       "summary": "Built a deep learning pipeline using image forensics and classification models to detect forged identity documents and manipulated images."
     },
     {
       "title": "Securing the Cloud: Deep Learning + ORCA Optimization",
-      "venue": "Research Publication",
+      "venue": "IEEE",
       "year": "Sep 2025",
-      "link": "",
+      "link": "https://ieeexplore.ieee.org/abstract/document/11140715",
       "summary": "Proposed an intelligent cloud security framework combining DL-based threat classification with ORCA metaheuristic optimisation for adaptive threat detection."
     },
     {
       "title": "Multi-Model Deep Learning for Advanced Cybersecurity Threat Detection",
-      "venue": "Research Publication",
+      "venue": "IEEE",
       "year": "Apr 2026",
-      "link": "",
+      "link": "https://ieeexplore.ieee.org/abstract/document/11469498",
       "summary": "Designed a CNN / RNN / Transformer ensemble to detect and classify advanced cyber threats with improved accuracy across real-time network traffic data."
     }
   ],

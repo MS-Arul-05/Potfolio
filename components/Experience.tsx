@@ -8,7 +8,7 @@ export default function Experience() {
       <ol className="relative border-l border-line pl-6">
         {portfolio.experience.map((e) => (
           <li key={`${e.company}-${e.role}`} className="mb-10 last:mb-0">
-            <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full bg-accent ring-4 ring-white" />
+            <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full bg-accent ring-4 ring-parchment" />
             <p className="text-sm font-medium text-muted">
               {e.start} – {e.end}
             </p>
